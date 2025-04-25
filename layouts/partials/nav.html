@@ -12,11 +12,18 @@
                     <span class="sr-only">{{ .Title }} - {{ i18n "navHome" }}</span>
                 </a>
                 <div class="navbar-buttons">
-                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
-                      <span class="sr-only">{{ i18n "navToggle" }}</span>
-                        <i class="fas fa-align-justify"></i>
-                    </button>
-                </div>
+    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+        <span class="sr-only">{{ i18n "navToggle" }}</span>
+        <i class="fas fa-align-justify"></i>
+    </button>
+
+    <!-- 👇 ここに検索ボタンを追加！ -->
+    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#search">
+        <span class="sr-only">サイト内検索</span>
+        <i class="fas fa-search"></i>
+    </button>
+</div>
+
             </div>
             <!--/.navbar-header -->
 
@@ -144,15 +151,19 @@
             <!--/.nav-collapse -->
 
             <div class="collapse clearfix" id="search">
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <span class="input-group-btn">
-                    <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
-                </span>
-                    </div>
-                </form>
-            </div>
+    <form method="get" action="https://www.google.com/search" target="_blank" class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="サイト内検索">
+            <input type="hidden" name="sitesearch" value="tebando.github.io/erdads">
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-template-main">
+                    <i class="fas fa-search"></i>
+                </button>
+            </span>
+        </div>
+    </form>
+</div>
+
             <!--/.nav-collapse -->
         </div>
     </div>
