@@ -36,7 +36,7 @@
 
 
 
-<link href="/erdads/css/custom.css?1745592726" rel="stylesheet">
+<link href="/erdads/css/custom.css?1745623667" rel="stylesheet">
 
 
 
@@ -244,15 +244,18 @@
             
 
             <div class="collapse clearfix" id="search">
-                <form class="navbar-form" role="search">
+                <form method="get" action="https://www.google.com/search" target="_blank" class="navbar-form" role="search">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
+                        <input type="text" name="q" class="form-control" placeholder="サイト内検索">
+                        <input type="hidden" name="sitesearch" value="tebando.github.io/erdads">
                         <span class="input-group-btn">
-                    <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
-                </span>
+                            <button type="submit" class="btn btn-template-main">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </span>
                     </div>
                 </form>
-            </div>
+            </div>            
             
         </div>
     </div>
