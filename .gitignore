@@ -1,7 +1,2 @@
-# .gitignore の themes/ をコメントアウト
-sed -i '' 's/^themes\//\# themes\//' .gitignore  # ←Macの場合
-
-# テーマを追加してコミット
-git add themes/hugo-universal-theme
-git commit -m "Include theme for GitHub Pages build"
-git push
+# Hugo build output
+public/
