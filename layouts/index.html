@@ -18,9 +18,26 @@
 
         {{ partial "features.html" . }}
 
-        {{ partial "news.html" . }}     
-
-        {{ partial "staff_home.html" . }}      
+        {{ partial "staff_home.html" . }}
+        
+         <!-- ニュース目次をここに追加 -->
+         <div class="container text-center">
+          <section id="latest-news">
+            <div class="container text-center">
+                <h2 class="title-underlined">最新のニュース</h2>
+                <ul>
+                    {{ range first 3 .Site.Pages }}
+                        {{ if eq .Type "news" }}
+                            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                        {{ end }}
+                    {{ end }}
+                </ul>
+            </div>
+        </section>
+        
+        
+        
+      
 
         {{ partial "testimonials.html" . }}
 

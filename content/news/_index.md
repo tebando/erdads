@@ -1,6 +1,7 @@
 ---
 title: "ニュース"
 description: "当センターからのお知らせ一覧です。"
+type: "news"
 draft: false
 ---
 

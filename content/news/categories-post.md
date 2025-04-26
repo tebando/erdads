@@ -5,6 +5,7 @@ tags = ["golang", "programming", "theme", "hugo"]
 categories = ["programming","lorem","pseudo"]
 banner = "img/banners/banner-4.jpg"
 authors = ["John Doe"]
+type= "news" 
 +++
 
 I'm a post with multiple categories in the frontmatter:
