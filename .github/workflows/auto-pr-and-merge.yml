@@ -1,4 +1,4 @@
-name: Auto Create Pull Request Only
+name: Auto Create and Merge Pull Request
 
 on:
   push:
@@ -28,3 +28,10 @@ jobs:
             🚀 このプルリクエストは自動生成されました。
             developの更新内容をmainに統合します。
           draft: false
+
+      - name: Enable Pull Request Auto-Merge
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: squash
