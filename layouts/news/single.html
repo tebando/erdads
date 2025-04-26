@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    {{ partial "headers.html" . }}
+    {{ partial "custom_headers.html" . }}
+  </head>
+  <body>
+    <div id="all">
+      {{ partial "top.html" . }}
+      {{ partial "nav.html" . }}
+
+      {{ partial "breadcrumbs.html" . }}
+
+      <div id="content">
+        <div class="container">
+          <div class="row">
+
+            <!-- 左：記事本文 -->
+            <div class="col-md-9" id="news-article">
+              <h1>{{ .Title }}</h1>
+              <p class="text-muted">{{ .Date.Format "2006/01/02" }}</p>
+              <div id="post-content">
+                {{ .Content }}
+              </div>
+            </div>
+            <!-- /#news-article -->
+
+            <!-- 右：サイドバー -->
+            <div class="col-md-3">
+              {{ partial "sidebar.html" . }}
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {{ partial "footer.html" . }}
+    </div>
+
+    {{ partial "scripts.html" . }}
+  </body>
+</html>

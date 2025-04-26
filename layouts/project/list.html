@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section style="background-color: #f0f8f5; padding: 3rem 0;">
+  <div class="container">
+    <h2 class="text-center mb-5" style="color: #006644;">研究紹介</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {{ range .Pages }}
+      <div class="col d-flex">
+        <div class="card text-center w-100" style="background: white; padding: 20px; border: none; min-height: 400px;">
+          {{ with .Params.image }}
+          <img src="{{ . | relURL }}" alt="{{ $.Title }}" style="width: 100px; height: 100px; object-fit: contain; margin: 0 auto 1rem;">
+          {{ end }}
+          <h5 class="card-title">{{ .Title }}</h5>
+          {{ with .Params.summary }}
+          <p class="card-text" style="font-size: 0.9rem;">{{ . }}</p>
+          {{ end }}
+          <div class="mt-auto">
+            <a href="{{ .RelPermalink }}" class="btn btn-success mt-3">詳しく見る</a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
