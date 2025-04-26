@@ -208,7 +208,7 @@ pluralizelisttitles = false
     # at 'exampleSite/data/features'.
     # For more information take a look at the README.
     title = "INTRODUCTION"
-    subtitle = "教員養成DX推進機構"
+    subtitle = "教師のためのAI・DS研究開発センター"
 
 [params.testimonials]
     enable = true
