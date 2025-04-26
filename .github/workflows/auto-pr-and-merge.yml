@@ -1,4 +1,4 @@
-name: Auto Create and Merge Pull Request
+name: Auto Create Pull Request Only
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - develop
 
 jobs:
-  auto-pr-and-merge:
+  auto-pr:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -28,10 +28,3 @@ jobs:
             🚀 このプルリクエストは自動生成されました。
             developの更新内容をmainに統合します。
           draft: false
-
-      - name: Merge Pull Request
-        if: steps.cpr.outputs.pull-request-number != ''
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        run: |
-          gh pr merge ${{ steps.cpr.outputs.pull-request-number }} --merge --admin
