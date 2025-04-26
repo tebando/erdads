@@ -6,8 +6,11 @@ on:
       - develop
 
 jobs:
-  auto-pr:
+  auto-pr-and-merge:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
 
     steps:
       - name: Checkout code
@@ -25,3 +28,10 @@ jobs:
             🚀 このプルリクエストは自動生成されました。
             developの更新内容をmainに統合します。
           draft: false
+
+      - name: Merge Pull Request
+        if: steps.cpr.outputs.pull-request-url != ''
+        run: |
+          gh pr merge ${{ steps.cpr.outputs.pull-request-number }} --squash --admin
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
