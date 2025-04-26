@@ -35,7 +35,7 @@ pluralizelisttitles = false
 [[menu.main]]
     name       = "センターの概要"
     identifier = "menu.2"
-    url        = "/img/template-easy-customize.png"
+    url        = "/about/"
     weight     = 2
 
 [[menu.main]]
@@ -53,7 +53,7 @@ pluralizelisttitles = false
 [[menu.main]]
     name       = "センターの活動"
     identifier = "menu.3"
-    url        = "/img/template-easy-customize.png"
+    url        = "/activity/"
     weight     = 3
 
 [[menu.main]]
@@ -67,7 +67,6 @@ pluralizelisttitles = false
     url        = "/"
     weight     = 2
     parent     = "menu.3"
-
 #[[menu.main]]
 #    name       = "Portfolio"
 #    identifier = "menu.portfolio"

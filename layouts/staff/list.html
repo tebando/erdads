@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+  {{ partial "headers.html" . }}
+  {{ partial "custom_headers.html" . }}
+</head>
+
+<body>
+
+<div id="all">
+
+    {{ partial "top.html" . }}
+
+    {{ partial "nav.html" . }}
+
+    {{ partial "breadcrumbs.html" . }}
+
+    <div id="content">
+        <div class="container">
+
+            <div class="row">
+
+                <!-- *** LEFT COLUMN (スタッフ一覧) *** -->
+
+                <div class="col-md-9" id="blog-post">
+                    <h1 class="text-center mb-5">{{ .Title }}</h1>
+
+                    {{ if site.Data.staff.groups }}
+                        {{ range site.Data.staff.groups }}
+                            <h2 class="text-center mt-5 mb-4">{{ .title }}</h2>
+                            <div class="row justify-content-center">
+                                {{ range .members }}
+                                <div class="col-md-3 col-sm-6 text-center mb-4">
+                                    <div class="card border-0">
+                                        <img src="{{ .photo | relURL }}" alt="{{ .name }}" class="card-img-top rounded-circle mx-auto mt-3" style="width:150px;height:150px;object-fit:cover;">
+                                        <div class="card-body">
+                                            <h5 class="card-title mt-3">{{ .name }}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{ end }}
+                            </div>
+                        {{ end }}
+                    {{ else }}
+                        <div class="alert alert-info text-center">
+                            スタッフ情報は現在準備中です。
+                        </div>
+                    {{ end }}
+                </div>
+
+                <!-- *** LEFT COLUMN END *** -->
+
+                <!-- *** RIGHT COLUMN (サイドバー) *** -->
+
+                <div class="col-md-3">
+                    {{ partial "sidebar.html" . }}
+                </div>
+
+                <!-- *** RIGHT COLUMN END *** -->
+
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /#content -->
+
+    {{ partial "footer.html" . }}
+
+</div>
+<!-- /#all -->
+
+{{ partial "scripts.html" . }}
+
+</body>
+</html>

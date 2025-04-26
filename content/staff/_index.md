@@ -1,6 +1,7 @@
 +++
 title = "スタッフ紹介"
 description = "Découvrez les membres de notre équipe."
+type ="staff"
 draft = false
 
 [[groups]]
