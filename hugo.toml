@@ -155,8 +155,8 @@ pluralizelisttitles = false
     disabled_logo = false
     logo_text = "Universal"
 
-    logo = "img/DX.png"
-    logo_small = "img/DX.png"
+    logo = "img/logo-erdads.png"
+    logo_small = "img/logo-erdads.png"
     address = """<p class="text-uppercase">
         <br>メール：xxxxxx@naruto-u.ac.jp
       </p>
