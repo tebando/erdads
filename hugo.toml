@@ -41,7 +41,7 @@ pluralizelisttitles = false
 
 [[menu.main]]
     name       = "メンバー"
-    url        = "/staff/"
+    url        = "/#staff"
     weight     = 4
 
 [[menu.main]]

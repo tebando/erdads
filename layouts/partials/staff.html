@@ -1,0 +1,12 @@
+<section id="staff">
+    <h2>スタッフ紹介</h2>
+    <ul>
+      {{ range (where .Site.RegularPages "Section" "staff") }}
+        <li>
+          {{ .Title }}
+          {{ with .Params.role }}- {{ . }}{{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+  

@@ -1,0 +1,28 @@
+<section id="staff" class="my-5">
+    <div class="container text-center">
+      <h2 class="title-underlined">メンバー紹介</h2>
+      <div class="row justify-content-center">
+        {{ with .Site.GetPage "section" "staff" }}
+          {{ range .Params.groups }}
+            {{ range .members }}
+              <div class="col-md-3 col-sm-6 text-center mb-4">
+                <div class="staff-card"> <!-- ★1人分をカードで囲む -->
+                  <div class="photo-wrapper">
+                    {{ if .url }}
+                      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+                        <img src="{{ .photo | relURL }}" alt="{{ .name }}" class="member-photo" style="width:180px;height:180px;object-fit:cover;">
+                      </a>
+                    {{ else }}
+                      <img src="{{ .photo | relURL }}" alt="{{ .name }}" class="member-photo" style="width:180px;height:180px;object-fit:cover;">
+                    {{ end }}
+                  </div>
+                  <h5 class="mt-3">{{ .name }}</h5>
+                </div> <!-- /staff-card -->
+              </div>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  
