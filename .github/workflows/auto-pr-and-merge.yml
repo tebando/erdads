@@ -30,8 +30,8 @@ jobs:
           draft: false
 
       - name: Merge Pull Request
-        if: steps.cpr.outputs.pull-request-url != ''
-        run: |
-          gh pr merge ${{ steps.cpr.outputs.pull-request-number }} --squash --admin
+        if: steps.cpr.outputs.pull-request-number != ''
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        run: |
+          gh pr merge ${{ steps.cpr.outputs.pull-request-number }} --merge --admin
