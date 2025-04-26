@@ -18,65 +18,54 @@
           </button>
         </div>
       </div>
-      <!--/.navbar-header-->
+      <!-- /.navbar-header -->
 
       <div class="navbar-collapse collapse" id="navigation">
         <ul class="nav navbar-nav navbar-right">
           {{ $current := . }}
           {{ range .Site.Menus.main.ByWeight }}
-          {{ $topLevel := replace .URL "/" "" }}
-          {{ $active := "" }}
+            {{ $topLevel := replace .URL "/" "" }}
+            {{ $active := "" }}
 
-          {{ if eq $current.RelPermalink .URL }}
-            {{ $active = "active" }}
-          {{ end }}
+            {{ if eq $current.RelPermalink .URL }}
+              {{ $active = "active" }}
+            {{ end }}
 
-          {{ if eq $current.Type $topLevel }}
-            {{ $active = "active" }}
-          {{ end }}
+            {{ if eq $current.Type $topLevel }}
+              {{ $active = "active" }}
+            {{ end }}
 
-          {{ if and (or (eq $current.RelPermalink .URL) (eq "term" $current.Kind)) (in (slice "page" "term") $current.Kind) }}
-            {{ range (split .URL "/") }}
-              {{ if eq "blog" . }}
-                {{ $active = "active" }}
+            {{ if and (or (eq $current.RelPermalink .URL) (eq "term" $current.Kind)) (in (slice "page" "term") $current.Kind) }}
+              {{ range (split .URL "/") }}
+                {{ if eq "blog" . }}
+                  {{ $active = "active" }}
+                {{ end }}
               {{ end }}
             {{ end }}
-          {{ end }}
 
-          {{ if .HasChildren }}
-          <li class="dropdown {{ $active }}">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }} <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              {{ range .Children.ByWeight }}
-              <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-              {{ end }}
-            </ul>
-          </li>
-          {{ else }}
-          <li class="dropdown {{ $active }}">
-            <a href="{{ .URL }}">{{ .Name }}</a>
-          </li>
-          {{ end }}
+            {{ if .HasChildren }}
+              <li class="dropdown {{ $active }}">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  {{ .Name }} <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  {{ range .Children.ByWeight }}
+                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                  {{ end }}
+                </ul>
+              </li>
+            {{ else }}
+              <li class="dropdown {{ $active }}">
+                <a href="{{ .URL }}">{{ .Name }}</a>
+              </li>
+            {{ end }}
           {{ end }}
         </ul>
       </div>
-      <!--/.nav-collapse -->
-
-      <div class="collapse clearfix" id="search">
-        <form class="navbar-form" role="search">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search">
-            <span class="input-group-btn">
-              <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
-            </span>
-          </div>
-        </form>
-      </div>
-      <!--/#search-->
-
+      <!-- /.navbar-collapse -->
     </div>
-    <!--/.container-->
+    <!-- /.container -->
   </div>
-  <!--/.navbar-->
+  <!-- /.navbar -->
 </header>
 <!-- *** NAVBAR END *** -->

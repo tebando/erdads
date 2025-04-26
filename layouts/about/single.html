@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+  {{ partial "headers.html" . }}
+  {{ partial "custom_headers.html" . }}
+  <style>
+    /* ここに直接スタイルを書いてスマートに調整！ */
+    body {
+      font-size: 15px;
+      line-height: 1.6;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #f0f8f5;
+    }
+
+    #post-content {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      font-size: 15px;
+    }
+
+    h1, h2, h3, h4, h5 {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: #006644; /* 緑ベースに爽やかさ */
+    }
+/* 見出しサイズを設定 */
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.75rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.25rem;
+}
+h5 {
+  font-size: 1rem;
+}
+    p {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="all">
+
+    {{ partial "top.html" . }}
+    {{ partial "nav.html" . }}
+    {{ partial "breadcrumbs.html" . }}
+
+    <div id="content" style="padding: 3rem 0;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12" id="page-content">
+
+            {{ if or .Params.author .Params.date }}
+            <p class="text-muted text-uppercase mb-small text-right" style="font-size: 13px;">
+              {{ if isset .Params "authors" }}
+              {{ i18n "authorBy" }} {{ range $index, $author := .Params.authors }}{{ if $index }}, {{ end }}<a href="{{ (printf "%s/%s" ("authors" | relLangURL) ($author | urlize)) }}">{{ $author }}</a>{{ end }}
+              {{ end }}
+              {{ if and .Params.author .Params.date }} | {{ end }}
+              {{ if .Params.date }}
+              {{ $createdAt := .Date.Format .Site.Params.date_format }}
+              {{ range $index, $month := slice "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December" }}
+              {{ $createdAt = replace $createdAt $month (i18n $month) }}
+              {{ end }}
+              {{ $createdAt }}
+              {{ end }}
+            </p>
+            {{ end }}
+
+            <div id="post-content">
+              {{ .Content }}
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{ partial "footer.html" . }}
+
+  </div>
+
+  {{ partial "scripts.html" . }}
+
+</body>
+
+</html>

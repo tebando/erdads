@@ -2,7 +2,7 @@ baseURL = "https://tebando.github.io/erdads/"
 title = "教師のためのAI・DS研究開発センター"
 theme = "hugo-universal-theme"
 themesDir = "themes"
-languageCode = "ja"
+languageCode = "ja-jp"
 # Site language. Available translations in the theme's `/i18n` directory.
 defaultContentLanguage = "en"
 
@@ -28,146 +28,26 @@ pluralizelisttitles = false
 [menu]
 [[menu.main]]
     name       = "HOME"
-    identifier = "menu.home"
     url        = "/"
     weight     = 1
-
 [[menu.main]]
-    name       = "センターの概要"
-    identifier = "menu.2"
+    name       = "ニュース"
+    url        = "/news/"
+    weight     = 2
+[[menu.main]]
+    name       = "センターについて"
     url        = "/about/"
-    weight     = 2
-
-[[menu.main]]
-    name       = "センター紹介"
-    url        = "/"
-    weight     = 1
-    parent     = "menu.2"
-
-[[menu.main]]
-    name       = "スタッフ紹介"
-    url        = "/staff/"
-    weight     = 2
-    parent     = "menu.2"
-
-[[menu.main]]
-    name       = "センターの活動"
-    identifier = "menu.3"
-    url        = "/activity/"
     weight     = 3
 
 [[menu.main]]
-    name       = "センター会議"
-    url        = "/"
-    weight     = 1
-    parent     = "menu.3"
+    name       = "メンバー"
+    url        = "/staff/"
+    weight     = 4
 
 [[menu.main]]
-    name       = "成果"
-    url        = "/"
-    weight     = 2
-    parent     = "menu.3"
-#[[menu.main]]
-#    name       = "Portfolio"
-#    identifier = "menu.portfolio"
-#    url        = "/img/template-homepage.png"
-#    weight     = 4
-
-#[[menu.main]]
-#    name       = "Portfolio"
-#    identifier = "section.portfolio"
-#    url        = ""
-#    weight     = 1
-#    parent     = "menu.portfolio"
-#    post       = 1
-
-#[[menu.main]]
-#    name       = "2 Columns"
-#    url        = ""
-#    weight     = 1
-#    parent     = "section.portfolio"
-
-#[[menu.main]]
-#    name       = "2 Columns With Negative Space"
-#    url        = ""
-#    weight     = 2
-#    parent     = "section.portfolio"
-
-#[[menu.main]]
-#    name       = "3 Columns"
-#    url        = ""
-#    weight     = 3
-#    parent     = "section.portfolio"
-
-#[[menu.main]]
-#    name       = "3 Columns With Negative Space"
-#    url        = ""
-#    weight     = 4
-#    parent     = "section.portfolio"
-
-#[[menu.main]]
-#    name       = "4 Columns"
-#    url        = ""
-#    weight     = 5
-#    parent     = "section.portfolio"
-
-#[[menu.main]]
-#    name       = "4 Columns With Negative Space"
-#    url        = ""
-#    weight     = 6
-#    parent     = "section.portfolio"
-
-#[[menu.main]]
-#    name       = "Portfolio - detail"
-#    url        = ""
-#    weight     = 7
-#    parent     = "section.portfolio"
-
-#[[menu.main]]
-#    name       = "Portfolio - detail 2"
-#    url        = ""
-#    weight     = 8
-#    parent     = "section.portfolio"
-
-#[[menu.main]]
-#    name       = "About"
-#    identifier = "section.about"
-#    url        = ""
-#    weight     = 2
-#    parent     = "menu.portfolio"
-#    post       = 2
-
-#[[menu.main]]
-#    name       = "Marketing"
-#    identifier = "section.marketing"
-#    url        = ""
-#    weight     = 3
-#    parent     = "menu.portfolio"
-#    post       = 2
-
-#[[menu.main]]
-#    name       = "Packages"
-#    url        = ""
-#    weight     = 1
-#    parent     = "section.marketing"
-
-[[menu.main]]
-    name       = "アクセス"
-    identifier = "menu.access"
-    url        = "/blog/"
+    name       = "研究紹介"
+    url        = "/project/"
     weight     = 5
-
-[[menu.main]]
-    name       = "お問い合わせ"
-    identifier = "menu.contact"
-    url        = "/contact/"
-    weight     = 6
-
-[[menu.main]]
-    identifier = "サイトマップ"
-    name       = "faq"
-    url        = "/faq/"
-    weight     = 7
 
 
 # Top bar social links menu
@@ -259,13 +139,13 @@ pluralizelisttitles = false
     googleRecaptchaKey = "site_key_for_google_recaptcha"
 
     about_us = """<p class="text-uppercase"><strong>鳴門教育大学</strong>
-        <br><strong>教育養成DX推進機構</strong>
-        <br><p class="text-uppercase">連絡先：教務部教務課教育支援係(DX)
-        <br>〒772-8502 徳島県鳴門市鳴門町高島字中島748番地
-        <br>国立大学法人鳴門教育大学　地域連携センター2階セ202
+        <br><strong>教師のためのAI・DS研究開発センター</strong>
+        <br><p class="text-uppercase">連絡先：経営企画戦略課
+        <br>〒772-8502 徳島県鳴門市鳴門町高島字中島748
+        <br>国立大学法人鳴門教育大学
       </p>
       """
-    copyright = "Copyright (c) 2015 - 2016, YourCompany; all rights reserved."
+    copyright = "Copyright (c)Center for Educational Research and Development in AI and Data Science, all rights reserved."
 
     # Format dates with Go's time formatting
     date_format = "January 2, 2006"
@@ -277,10 +157,8 @@ pluralizelisttitles = false
 
     logo = "img/DX.png"
     logo_small = "img/DX.png"
-    contact_url = "/contact" #changer le lien du bouton contact ?
     address = """<p class="text-uppercase">
-        <br>電話：088-687-6194
-        <br>メール：kdx@naruto-u.ac.jp
+        <br>メール：xxxxxx@naruto-u.ac.jp
       </p>
       """
 
