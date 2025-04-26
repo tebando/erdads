@@ -1,63 +1,87 @@
 <header class="navbar-affixed-top" data-spy="affix" data-offset-top="62">
-  <div class="navbar navbar-default yamm {{ if .Site.Params.dropdown_mouse_over }}mouseover{{ end }}" role="navigation" id="navbar">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand home" href="{{ "/" | relLangURL }}">
-          {{ if default false .Site.Params.disabled_logo }}
-            <h4>{{ .Site.Params.logo_text }}</h4>
-          {{ else }}
-            <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Title }} logo" class="hidden-xs hidden-sm" />
-            <img src="{{ .Site.Params.logo_small | relURL }}" alt="{{ .Title }} logo" class="visible-xs visible-sm" />
-          {{ end }}
-          <span class="sr-only">{{ .Title }} - {{ i18n "navHome" }}</span>
-        </a>
-        <div class="navbar-buttons">
-          <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
-            <span class="sr-only">{{ i18n "navToggle" }}</span>
-            <i class="fas fa-align-justify"></i>
-          </button>
-
-          <!-- ★検索ボタン -->
-          <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#search">
-            <span class="sr-only">サイト内検索</span>
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-      <!--/.navbar-header -->
-
-      <div class="navbar-collapse collapse" id="navigation">
-        <ul class="nav navbar-nav navbar-right">
-          {{ $current := . }}
-          {{ range .Site.Menus.main.ByWeight }}
-            <!-- メニュー展開ロジック（省略可） -->
-          {{ end }}
-        </ul>
-      </div>
-      <!--/.nav-collapse -->
-
-      <!-- ★検索フォーム -->
-      <div class="collapse clearfix" id="search">
-        <form method="get" action="https://www.google.com/search" target="_blank" class="navbar-form" role="search">
-          <div class="input-group">
-            <input type="text" name="q" class="form-control" placeholder="サイト内検索">
-            <input type="hidden" name="sitesearch" value="tebando.github.io/erdads">
-            <span class="input-group-btn">
-              <button type="submit" class="btn btn-template-main">
-                <i class="fas fa-search"></i>
-              </button>
-            </span>
+    <div class="navbar navbar-default yamm {{ if .Site.Params.dropdown_mouse_over }}mouseover{{ end }}" role="navigation" id="navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand home" href="{{ "/" | relLangURL }}">
+            {{ if default false .Site.Params.disabled_logo }}
+              <h4>{{ .Site.Params.logo_text }}</h4>
+            {{ else }}
+              <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Title }} logo" class="hidden-xs hidden-sm" />
+              <img src="{{ .Site.Params.logo_small | relURL }}" alt="{{ .Title }} logo" class="visible-xs visible-sm" />
+            {{ end }}
+            <span class="sr-only">{{ .Title }} - {{ i18n "navHome" }}</span>
+          </a>
+          <div class="navbar-buttons">
+            <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+              <span class="sr-only">{{ i18n "navToggle" }}</span>
+              <i class="fas fa-align-justify"></i>
+            </button>
+  
+            <!-- 🔍検索ボタン -->
+            <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#search">
+              <span class="sr-only">サイト内検索</span>
+              <i class="fas fa-search"></i>
+            </button>
           </div>
-        </form>
-      </div>
-      <!--/.collapse -->
-      
-    </div>
-    <style>
-        #search {
-          display: block !important;
-        }
-        </style>
+        </div>
+        <!--/.navbar-header -->
+  
+        <div class="navbar-collapse collapse" id="navigation">
+          <ul class="nav navbar-nav navbar-right">
+            {{ $current := . }}
+            {{ range .Site.Menus.main.ByWeight }}
+            <!-- メニュー展開 -->
+            {{ end }}
+          </ul>
+        </div>
+        <!--/.nav-collapse -->
+  
+        <!-- 🔍検索フォーム -->
+        <div class="collapse clearfix" id="search">
+          <form method="get" action="https://www.google.com/search" target="_blank" class="navbar-form" role="search">
+            <div class="input-group">
+              <input type="text" name="q" class="form-control" placeholder="サイト内検索">
+              <input type="hidden" name="sitesearch" value="tebando.github.io/erdads">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-template-main">
+                  <i class="fas fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </form>
+        </div>
+        <!--/.search-collapse -->
         
+      </div>
+      <!--/.container -->
+    </div>
+    <!--/.navbar -->
   </header>
+  
   <!-- *** NAVBAR END ***-->
+  
+  <!-- 🔥 追加：検索とナビ切り替え制御 -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var navButton = document.querySelector('button[data-target="#navigation"]');
+    var searchButton = document.querySelector('button[data-target="#search"]');
+    var navigation = document.getElementById('navigation');
+    var search = document.getElementById('search');
+  
+    if (navButton && searchButton && navigation && search) {
+      navButton.addEventListener('click', function() {
+        if (search.classList.contains('in')) {
+          search.classList.remove('in');
+          search.classList.add('collapse');
+        }
+      });
+      searchButton.addEventListener('click', function() {
+        if (navigation.classList.contains('in')) {
+          navigation.classList.remove('in');
+          navigation.classList.add('collapse');
+        }
+      });
+    }
+  });
+  </script>
+  
