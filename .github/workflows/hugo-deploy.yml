@@ -40,18 +40,7 @@ jobs:
         with:
           name: public
           path: ./public
-  
-          # 🆕 ここからPR作成処理
-    - name: Create Pull Request
-    uses: peter-evans/create-pull-request@v6
-    with:
-      token: ${{ secrets.GITHUB_TOKEN }}
-      commit-message: "chore: auto PR by GitHub Actions"
-      branch: auto/pr-${{ github.run_id }}  # 自動ブランチ名（run_idで毎回ユニーク）
-      title: "Auto PR: Build and prepare deployment"
-      body: |
-        This PR is automatically created by GitHub Actions.
-        
+
   deploy:
     runs-on: ubuntu-latest
     needs: build  # buildジョブが成功した後に実行
