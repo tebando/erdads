@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>教師のためのAI・DS研究開発センターの公式サイト on 教師のためのAI・DS研究開発センター</title><link>https://tebando.github.io/erdads/</link><description>Recent content in 教師のためのAI・DS研究開発センターの公式サイト on 教師のためのAI・DS研究開発センター</description><generator>Hugo</generator><language>ja-jp</language><lastBuildDate>Sun, 01 Aug 2021 21:29:20 +0200</lastBuildDate><atom:link href="https://tebando.github.io/erdads/index.xml" rel="self" type="application/rss+xml"/><item><title>Categories Post</title><link>https://tebando.github.io/erdads/news/categories-post/</link><pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate><guid>https://tebando.github.io/erdads/news/categories-post/</guid><description>&lt;p>I&amp;rsquo;m a post with multiple categories in the frontmatter:&lt;/p>
+&lt;pre>&lt;code>categories = [&amp;quot;programming&amp;quot;,&amp;quot;lorem&amp;quot;,&amp;quot;pseudo&amp;quot;]
+&lt;/code>&lt;/pre>
+&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris nulla, vestibulum vel auctor sed, posuere eu lorem. Aliquam consequat augue ut accumsan mollis. Suspendisse malesuada sodales tincidunt. Vivamus sed erat ac augue bibendum porta sed id ipsum. Ut mollis mauris eget ligula sagittis cursus. Aliquam id pharetra tellus. Pellentesque sed tempus risus. Proin id hendrerit ante. Vestibulum vitae urna ut mauris ultricies dignissim. Ut ante turpis, tristique vitae sagittis quis, sagittis nec diam. Fusce pulvinar cursus porta. Vivamus maximus leo dolor, ut pellentesque lorem fringilla nec. Mauris faucibus turpis posuere sapien euismod, a ullamcorper mi maximus.&lt;/p></description></item><item><title>Linked post</title><link>https://tebando.github.io/erdads/news/linked-post/</link><pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate><guid>https://tebando.github.io/erdads/news/linked-post/</guid><description>&lt;p>I&amp;rsquo;m a linked post in the menu. You can add other posts by adding the following line to the frontmatter:&lt;/p>
+&lt;pre>&lt;code>menu = &amp;quot;main&amp;quot;
+&lt;/code>&lt;/pre>
+&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris nulla, vestibulum vel auctor sed, posuere eu lorem. Aliquam consequat augue ut accumsan mollis. Suspendisse malesuada sodales tincidunt. Vivamus sed erat ac augue bibendum porta sed id ipsum. Ut mollis mauris eget ligula sagittis cursus. Aliquam id pharetra tellus. Pellentesque sed tempus risus. Proin id hendrerit ante. Vestibulum vitae urna ut mauris ultricies dignissim. Ut ante turpis, tristique vitae sagittis quis, sagittis nec diam. Fusce pulvinar cursus porta. Vivamus maximus leo dolor, ut pellentesque lorem fringilla nec. Mauris faucibus turpis posuere sapien euismod, a ullamcorper mi maximus.&lt;/p></description></item><item><title>Go is for lovers</title><link>https://tebando.github.io/erdads/news/go-is-for-lovers/</link><pubDate>Thu, 17 Sep 2015 13:47:08 +0200</pubDate><guid>https://tebando.github.io/erdads/news/go-is-for-lovers/</guid><description>&lt;p>Hugo uses the excellent &lt;a href="https://go.dev/">go&lt;/a> &lt;a href="https://pkg.go.dev/html/template">html/template&lt;/a> library for
+its template engine. It is an extremely lightweight engine that provides a very
+small amount of logic. In our experience that it is just the right amount of
+logic to be able to create a good static website. If you have used other
+template systems from different languages or frameworks you will find a lot of
+similarities in go templates.&lt;/p>
+&lt;p>This document is a brief primer on using go templates. The &lt;a href="https://pkg.go.dev/html/template">go docs&lt;/a>
+provide more details.&lt;/p></description></item><item><title>Hugo is for lovers</title><link>https://tebando.github.io/erdads/news/hugo-is-for-lovers/</link><pubDate>Mon, 03 Aug 2015 13:39:46 +0200</pubDate><guid>https://tebando.github.io/erdads/news/hugo-is-for-lovers/</guid><description>This is the summary Goto &lt;a href="https://github.com/spf13/hugo/releases">hugo releases&lt;/a> and download the appropriate version for your os and architecture. Save it somewhere specific as we will be using it in the next step. More complete instructions are available at &lt;a href="https://tebando.github.io/erdads/overview/installing/">installing hugo&lt;/a></description></item><item><title>Creating a new theme</title><link>https://tebando.github.io/erdads/news/creating-a-new-theme/</link><pubDate>Wed, 24 Jun 2015 13:50:46 +0200</pubDate><guid>https://tebando.github.io/erdads/news/creating-a-new-theme/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.&lt;/p>
+&lt;p>We&amp;rsquo;ll start with creating a new site with a very basic template. Then we&amp;rsquo;ll add in a few pages and posts. With small variations on that, you will be able to create many different types of web sites.&lt;/p></description></item><item><title>Contact</title><link>https://tebando.github.io/erdads/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tebando.github.io/erdads/contact/</guid><description>&lt;h1 id="お問い合わせ">お問い合わせ&lt;/h1>
+&lt;p>お預かりした個人情報は、プライバシーポリシーに基づいてお取り扱い致します。&lt;/p>
+&lt;p>URL&lt;/p>
+&lt;p>送信されたお問い合わせは教員養成DX推進機構及び教務部教務課教育支援係（DX)へ通知されます。&lt;/p></description></item><item><title>FAQ</title><link>https://tebando.github.io/erdads/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tebando.github.io/erdads/faq/</guid><description>&lt;p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;/p>
+&lt;h2 id="1-what-to-do-if-i-have-still-not-received-the-order">1. WHAT TO DO IF I HAVE STILL NOT RECEIVED THE ORDER?&lt;/h2>
+&lt;p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;/p></description></item><item><title>IR</title><link>https://tebando.github.io/erdads/project/ir-class-improvement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tebando.github.io/erdads/project/ir-class-improvement/</guid><description>&lt;p>詳細は準備中です。&lt;/p></description></item><item><title>LA</title><link>https://tebando.github.io/erdads/project/learning-analytics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tebando.github.io/erdads/project/learning-analytics/</guid><description>&lt;p>詳細は準備中です。&lt;/p></description></item><item><title>Migrate from Jekyll</title><link>https://tebando.github.io/erdads/news/migrate-from-jekyll/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tebando.github.io/erdads/news/migrate-from-jekyll/</guid><description>&lt;h2 id="move-static-content-to-static">Move static content to &lt;code>static&lt;/code>&lt;/h2>
+&lt;p>Jekyll has a rule that any directory not starting with &lt;code>_&lt;/code> will be copied as-is to the &lt;code>_site&lt;/code> output. Hugo keeps all static content under &lt;code>static&lt;/code>. You should therefore move it all there.
+With Jekyll, something that looked like&lt;/p>
+&lt;pre>&lt;code>▾ &amp;lt;root&amp;gt;/
+ ▾ images/
+ logo.png
+&lt;/code>&lt;/pre>
+&lt;p>should become&lt;/p>
+&lt;pre>&lt;code>▾ &amp;lt;root&amp;gt;/
+ ▾ static/
+ ▾ images/
+ logo.png
+&lt;/code>&lt;/pre>
+&lt;p>Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as &lt;code>CNAME&lt;/code>) to be moved to &lt;code>static&lt;/code>.&lt;/p></description></item><item><title>センターの概要</title><link>https://tebando.github.io/erdads/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tebando.github.io/erdads/about/</guid><description>&lt;h2 id="教師のためのaids研究開発センターについて">教師のためのAI・DS研究開発センターについて&lt;/h2>
+&lt;h3 id="ミッション">ミッション&lt;/h3>
+&lt;ul>
+&lt;li>AI・DS（人工知能・データサイエンス）の活用により、教師の専門性向上を支援する。&lt;/li>
+&lt;li>地域社会との共創を通じ、教育力の強化に貢献する。&lt;/li>
+&lt;/ul>
+&lt;h3 id="センターの目的">センターの目的&lt;/h3>
+&lt;p>センターは、教師が主体的・継続的に専門性を高めることを支援するため、&lt;br>
+&lt;strong>AI・DS活用に関する先導的な研究開発&lt;/strong>を推進します。&lt;/p>
+&lt;hr>
+&lt;h3 id="組織体制">組織体制&lt;/h3>
+&lt;h4 id="センター本体">センター本体&lt;/h4>
+&lt;ul>
+&lt;li>鳴門教育大学 教師のためのAI・DS研究開発センター（以下「センター」）&lt;/li>
+&lt;/ul>
+&lt;h4 id="プロジェクト管理室">プロジェクト管理室&lt;/h4>
+&lt;ul>
+&lt;li>センターに設置される管理組織です。&lt;/li>
+&lt;li>プロジェクトの&lt;strong>企画・進捗管理・研究戦略の推進&lt;/strong>を担います。&lt;/li>
+&lt;/ul>
+&lt;h4 id="研究開発分野">研究開発分野&lt;/h4>
+&lt;ul>
+&lt;li>必要に応じて、センター内に&lt;strong>複数の研究開発分野&lt;/strong>を設置します。&lt;/li>
+&lt;li>各分野が、テーマ別に&lt;strong>先進的な教育・研究活動&lt;/strong>を進めます。&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="運営体制">運営体制&lt;/h3>
+&lt;ul>
+&lt;li>センター所長（副学長（研究・入試担当））&lt;/li>
+&lt;li>プロジェクト管理室長（特命補佐（AI・DS研究開発担当））&lt;/li>
+&lt;li>必要な教員・研究員を配置&lt;/li>
+&lt;li>外部有識者による&lt;strong>シニア・フェロー制度&lt;/strong>も設置&lt;/li>
+&lt;/ul>
+&lt;p>センターの重要事項は、&lt;strong>センター運営会議&lt;/strong>において審議・決定されます。&lt;/p>
+&lt;hr>
+&lt;h3 id="業務内容">業務内容&lt;/h3>
+&lt;ul>
+&lt;li>AI・DS活用に関する研究開発&lt;/li>
+&lt;li>教職員研修等のモデル開発と応用研究&lt;/li>
+&lt;li>教育支援プログラムの開発と社会実装&lt;/li>
+&lt;li>その他、センター所長が必要と認めた事項&lt;/li>
+&lt;/ul>
+&lt;hr></description></item><item><title>学校ウェルビーイングシステム</title><link>https://tebando.github.io/erdads/project/school-wellbeing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tebando.github.io/erdads/project/school-wellbeing/</guid><description>&lt;p>詳細は準備中です。&lt;/p></description></item><item><title>教職肯定感</title><link>https://tebando.github.io/erdads/project/teacher-confidence/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tebando.github.io/erdads/project/teacher-confidence/</guid><description>&lt;p>詳細は準備中です。&lt;/p></description></item><item><title>研修受講履歴システム</title><link>https://tebando.github.io/erdads/project/training-history/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tebando.github.io/erdads/project/training-history/</guid><description>&lt;p>詳細は準備中です。&lt;/p></description></item></channel></rss>
