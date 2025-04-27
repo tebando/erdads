@@ -1,11 +1,9 @@
 name: Build and Deploy Hugo site to GitHub Pages
 
 on:
-  pull_request:
+  push:
     branches:
-      - main  # mainブランチへのPRが作成・マージされたときに実行
-    types:
-      - closed  # PRが閉じられたとき（通常はマージ時）に実行
+      - main  # mainブランチへのpushでワークフローを実行
 
 permissions:
   contents: read
@@ -17,22 +15,28 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: "0.134.3"  # 使用するHugoのバージョン
-      HUGO_ENVIRONMENT: "production"  # 環境変数の設定（本番環境）
-      HUGO_ENV: "production"  # 環境変数の設定（本番環境）
+      HUGO_ENVIRONMENT: "production"  # 本番環境用の設定
+      HUGO_ENV: "production"  # 本番環境用の設定
 
     steps:
-      # リポジトリのコードをチェックアウト
+      # リポジトリのコードをチェックアウト（v4）
       - name: Checkout code
         uses: actions/checkout@v4
-      
-      # Hugoを使ってサイトをビルド
+
+      # Hugoのインストール
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${{ env.HUGO_VERSION }}/hugo_extended_${{ env.HUGO_VERSION }}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      # Hugoでサイトをビルド
       - name: Build with Hugo
         run: |
           hugo --minify --baseURL "https://tebando.github.io/erdads/"  # GitHub PagesのURLを設定
 
       # アーティファクト（publicディレクトリ）を保存
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4  # v4に変更
         with:
           name: public
           path: ./public
@@ -43,14 +47,14 @@ jobs:
     steps:
       # publicディレクトリにビルドされたファイルをデプロイ
       - name: Download artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v4  # v4に変更
         with:
           name: public
           path: ./public
 
       # GitHub Pagesにデプロイ
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4  # v4に変更
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
