@@ -6,7 +6,9 @@ on:
       - main  # mainブランチへのpushは無視
   pull_request:
     types:
-      - closed  # PRがクローズされた（マージされた）場合に実行
+      - opened
+      - synchronized  # PRが作成または更新されたとき
+  workflow_dispatch:  # 手動でジョブをトリガーできるようにする
 
 jobs:
   auto-pr:
@@ -34,7 +36,7 @@ jobs:
           draft: false
 
   deploy:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)  # PRマージまたはpush時にデプロイ
+    if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -55,7 +57,7 @@ jobs:
         run: hugo --minify
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2  # 正しいアクションを使用
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./public
 
