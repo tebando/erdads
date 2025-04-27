@@ -1,63 +1,56 @@
-name: Hugo Deploy
+name: Build and Deploy Hugo site to GitHub Pages
 
 on:
-  push:
-    branches-ignore:
-      - main  # mainブランチへのpushは無視
   pull_request:
+    branches:
+      - main  # mainブランチへのPRが作成・マージされたときに実行
     types:
-      - closed  # PRがマージされた（クローズされた）場合に実行
+      - closed  # PRが閉じられたとき（通常はマージ時）に実行
+
+permissions:
+  contents: read
+  pages: write  # GitHub Pagesに書き込み権限
+  id-token: write
 
 jobs:
-  auto-pr:
-    if: github.event_name == 'push'
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
+    environment: "deploy to GitHub Pages"
+    env:
+      HUGO_VERSION: "0.134.3"  # 使用するHugoのバージョン
 
     steps:
+      # リポジトリのコードをチェックアウト
       - name: Checkout code
         uses: actions/checkout@v4
+      
+      # Hugoを使ってサイトをビルド
+      - name: Build with Hugo
+        run: |
+          hugo --minify --baseURL "https://tebando.github.io/erdads/"  # GitHub PagesのURLを設定
 
-      - name: Create Pull Request
-        id: cpr
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          base: main
-          branch: ${{ github.ref_name }}
-          title: "自動PR: ${{ github.ref_name }} → main"
-          body: |
-            🚀 自動生成されたPRです。
-            ブランチ ${{ github.ref_name }} の変更を main に統合します。
-          draft: false
-
-  deploy:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
-          extended: true
-
-      - name: Build website
-        run: hugo --minify
-
+      # アーティファクト（publicディレクトリ）を保存
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
+          name: public
           path: ./public
 
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build  # buildジョブが成功した後に実行
+    steps:
+      # publicディレクトリにビルドされたファイルをデプロイ
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: public
+          path: ./public
+
+      # GitHub Pagesにデプロイ
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          force_orphan: true  # 必要に応じて設定
