@@ -15,9 +15,10 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: "deploy to GitHub Pages"
     env:
       HUGO_VERSION: "0.134.3"  # 使用するHugoのバージョン
+      HUGO_ENVIRONMENT: "production"  # 環境変数の設定（本番環境）
+      HUGO_ENV: "production"  # 環境変数の設定（本番環境）
 
     steps:
       # リポジトリのコードをチェックアウト
