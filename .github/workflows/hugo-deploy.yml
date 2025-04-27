@@ -3,10 +3,10 @@ name: Hugo Deploy
 on:
   push:
     branches-ignore:
-      - main
+      - main  # mainブランチへのpushは無視
   pull_request:
     types:
-      - closed
+      - closed  # PRがクローズされた（マージされた）場合に実行
 
 jobs:
   auto-pr:
@@ -34,7 +34,7 @@ jobs:
           draft: false
 
   deploy:
-    if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)  # PRマージまたはpush時にデプロイ
     runs-on: ubuntu-latest
     permissions:
       contents: write
