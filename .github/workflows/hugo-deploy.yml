@@ -55,7 +55,7 @@ jobs:
         run: hugo --minify
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v2  # 修正：upload-artifactではなく、upload-pages-artifactを使用
         with:
           path: ./public
 
