@@ -6,7 +6,7 @@ on:
       - main  # mainブランチへのpushでワークフローを実行
 
 permissions:
-  contents: read
+  contents: write
   pages: write  # GitHub Pagesに書き込み権限
   id-token: write
 
