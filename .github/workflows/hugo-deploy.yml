@@ -1,0 +1,56 @@
+name: Build and Deploy Hugo site to GitHub Pages
+
+on:
+  pull_request:
+    branches:
+      - main  # mainブランチへのPRが作成・マージされたときに実行
+    types:
+      - closed  # PRが閉じられたとき（通常はマージ時）に実行
+
+permissions:
+  contents: read
+  pages: write  # GitHub Pagesに書き込み権限
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: "deploy to GitHub Pages"
+    env:
+      HUGO_VERSION: "0.134.3"  # 使用するHugoのバージョン
+
+    steps:
+      # リポジトリのコードをチェックアウト
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      # Hugoを使ってサイトをビルド
+      - name: Build with Hugo
+        run: |
+          hugo --minify --baseURL "https://tebando.github.io/erdads/"  # GitHub PagesのURLを設定
+
+      # アーティファクト（publicディレクトリ）を保存
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: public
+          path: ./public
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build  # buildジョブが成功した後に実行
+    steps:
+      # publicディレクトリにビルドされたファイルをデプロイ
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: public
+          path: ./public
+
+      # GitHub Pagesにデプロイ
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          force_orphan: true  # 必要に応じて設定
