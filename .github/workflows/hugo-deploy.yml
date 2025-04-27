@@ -6,9 +6,7 @@ on:
       - main  # mainブランチへのpushは無視
   pull_request:
     types:
-      - opened
-      - synchronized  # PRが作成または更新されたとき
-  workflow_dispatch:  # 手動でジョブをトリガーできるようにする
+      - closed  # PRがマージされた（クローズされた）場合に実行
 
 jobs:
   auto-pr:
@@ -36,7 +34,7 @@ jobs:
           draft: false
 
   deploy:
-    if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
     runs-on: ubuntu-latest
     permissions:
       contents: write
